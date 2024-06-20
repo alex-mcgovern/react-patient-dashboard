@@ -16,7 +16,7 @@
 		"@shared/utils": "*",
 		"@shared/date": "*",
 		"@shared/components": "*",
-		"boondoggle": "^2.0.218",
+		"boondoggle": "^2.0.278",
 		"react": "18.2.0"
 	}
 }

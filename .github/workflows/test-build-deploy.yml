@@ -57,6 +57,7 @@ jobs:
                   wait-on: http://localhost:3000
               env:
                   CYPRESS_BASE_URL: http://localhost:3000
+                  VITE_API_BASE_URL: ${{ vars.VITE_API_BASE_URL }}
 
     check_ref_name:
         name: "Check tag"
@@ -86,13 +87,15 @@ jobs:
 
             - name: Build
               run: npm install && npm run build
+              env:
+                  VITE_API_BASE_URL: ${{ vars.VITE_API_BASE_URL }}
 
             - name: Publish
               uses: cloudflare/pages-action@1
               with:
                   apiToken: ${{ secrets.CF_PAGES_TOKEN }}
                   accountId: ${{ secrets.CF_ACCOUNT_ID }}
-                  projectName: react-pokedex
+                  projectName: react-patient-dashboard
                   directory: dist
                   branch: main
                   gitHubToken: ${{ secrets.GITHUB_TOKEN }}
