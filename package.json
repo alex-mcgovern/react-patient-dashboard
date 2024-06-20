@@ -10,6 +10,7 @@
 		"packages/**/*"
 	],
 	"scripts": {
+		"prepare": "husky install",
 		"build": "vite build",
 		"check": "concurrently -n PRETTIER,ESLINT,TSC,VITEST,KNIP -c \"bgYellow.bold,bgRed.bold,bgBlue.bold,bgRed.bold,bgGreen.bold\" \"npm:check-prettier\" \"npm:check-eslint\" \"npm:check-tsc\" \"npm:check-vitest\" \"npm:check-knip\"",
 		"check-eslint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
