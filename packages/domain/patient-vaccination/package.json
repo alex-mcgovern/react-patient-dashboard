@@ -12,6 +12,7 @@
 	"dependencies": {
 		"@shared/redux": "*",
 		"react-redux": "9.1.2",
+		"react-aria-components": "1.2.0",
 		"@reduxjs/toolkit": "2.2.5",
 		"@shared/utils": "*",
 		"@shared/date": "*",

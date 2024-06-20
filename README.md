@@ -1,19 +1,19 @@
 
-# Pokedex React App
+# React Patient Dashboard
 
-A quick Pokedex app for a take-home assignment.
+A quick Patient Dashboard app for a take-home assignment.
 
 
 ## Demo
 
-It's deployed with Cloudflare pages at [react-pokedex.alexmcgovern.com](https://react-pokedex.alexmcgovern.com/)
+It's deployed with Cloudflare pages at [patient-dashboard.alexmcgovern.com](https://patient-dashboard.alexmcgovern.com/)
 
 
 ## Features
 
 - Built with [Vite](https://vitejs.dev/)
-- [PokeAPI](https://pokeapi.co/) to source data
-- Uses [openapi-zod-client](https://www.npmjs.com/package/openapi-zod-client) to build a type-safe API client from PokeAPI OpenAPI definition
+- Uses [Redux Toolkit](https://redux-toolkit.js.org/) for statement management
+- Uses [RTK Query](https://redux-toolkit.js.org/rtk-query/overview) for data fetching & caching
 - Built with a feature-complete component library, [Boondoggle](https://boondoggle.design/)
 - Monorepo architecture, using NPM workspaces (no deps) for module privacy 
 - Sentry error boundary — drop in a DSN to enable error tracking
@@ -29,7 +29,6 @@ It's deployed with Cloudflare pages at [react-pokedex.alexmcgovern.com](https://
 - `npm run check` — Run static analysis checks & unit tests: `eslint`, `prettier`, `tsc`, `vitest` and [`knip`](https://knip.dev/)
 - `npm run fix` — Fix any auto-fixable static analysis issues
 - `npm run cy:run` — Run E2E tests
-- `npm run gen` — Fetch the PokeAPI OpenAPI spec from their Github repo and re-generate the Zod schemas, types and API client
 
 ## Run Locally
 
@@ -74,13 +73,13 @@ _Then proceed with installation..._
 Clone the project
 
 ```bash
-  git clone git@github.com:alex-mcgovern/react-pokedex.git
+  git clone git@github.com:alex-mcgovern/react-patient-dashboard.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd react-pokedex
+  cd react-patient-dashboard
 ```
 
 Install dependencies
@@ -103,6 +102,5 @@ Or do a prod build
 
 ## What would I have done if I had more time?
 
-- [x] Build a Pokemon detail view, probably with a modal or drawer (I found time)
 - [ ] Add filtering to the table view
 - [ ] Round out styling — particularly on smaller screens, and add a mobile menu

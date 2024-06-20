@@ -1,14 +1,10 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-import {
-	type ListVaccinePatientResponse,
-	type ListVaccinePatientsSearchParams,
-	schemas,
-} from "./schema";
+import { type ListPatientResponse, type ListPatientsSearchParamsInput, schemas } from "./schema";
 
-const buildPatientsUrl = (search?: ListVaccinePatientsSearchParams) => {
+const buildPatientsUrl = (search?: ListPatientsSearchParamsInput) => {
 	if (search) {
-		const parsed = schemas.listVaccinePatientsSearchParams.parse(search);
+		const parsed = schemas.listPatientsSearchParams.parse(search);
 		const params = new URLSearchParams();
 		for (const [key, value] of Object.entries(parsed)) {
 			if (!value || value.toString().length < 2) {
@@ -27,13 +23,13 @@ export const patientsApi = createApi({
 	baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_API_BASE_URL }),
 	endpoints: (builder) => {
 		return {
-			listVaccinePatients: builder.query<
-				ListVaccinePatientResponse,
-				ListVaccinePatientsSearchParams | undefined
+			listPatients: builder.query<
+				ListPatientResponse,
+				ListPatientsSearchParamsInput | undefined
 			>({
 				query: buildPatientsUrl,
-				transformResponse: (response: ListVaccinePatientResponse) => {
-					return schemas.listVaccinePatientsResponse.parse(response);
+				transformResponse: (response: ListPatientResponse) => {
+					return schemas.listPatientsResponse.parse(response);
 				},
 			}),
 		};
@@ -41,7 +37,7 @@ export const patientsApi = createApi({
 	reducerPath: "patientsApi",
 });
 
-export const { useListVaccinePatientsQuery } = patientsApi;
+export const { useListPatientsQuery } = patientsApi;
 
 if (import.meta.vitest) {
 	const { expect, it } = import.meta.vitest;

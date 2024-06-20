@@ -1,7 +1,7 @@
 import { z } from "zod";
 const vaccineType = z.enum(["Pfizer", "AstraZeneca"]);
 
-const vaccinePatientSummary = z.object({
+const patientSummary = z.object({
 	firstName: z.string(),
 	id: z.coerce.number(),
 	lastName: z.string(),
@@ -12,9 +12,9 @@ const vaccinePatientSummary = z.object({
 	vaccineType: vaccineType,
 });
 
-const listVaccinePatientsResponse = z.array(vaccinePatientSummary);
+const listPatientsResponse = z.array(patientSummary);
 
-const listVaccinePatientsSearchParams = z.object({
+const listPatientsSearchParams = z.object({
 	firstName: z.string().optional(),
 	id: z.number().optional(),
 	lastName: z.string().optional(),
@@ -32,12 +32,13 @@ const listVaccinePatientsSearchParams = z.object({
 	vaccineType: vaccineType.optional(),
 });
 
-export type VaccinePatientSummary = z.infer<typeof vaccinePatientSummary>;
-export type ListVaccinePatientResponse = z.infer<typeof listVaccinePatientsResponse>;
-export type ListVaccinePatientsSearchParams = z.input<typeof listVaccinePatientsSearchParams>;
+export type PatientSummary = z.infer<typeof patientSummary>;
+export type ListPatientResponse = z.infer<typeof listPatientsResponse>;
+export type ListPatientsSearchParams = z.infer<typeof listPatientsSearchParams>;
+export type ListPatientsSearchParamsInput = z.input<typeof listPatientsSearchParams>;
 
 export const schemas = {
-	listVaccinePatientsResponse,
-	listVaccinePatientsSearchParams,
-	vaccinePatientSummary,
+	listPatientsResponse,
+	listPatientsSearchParams,
+	patientSummary,
 };
