@@ -89,6 +89,12 @@ Install dependencies
   npm i
 ```
 
+Copy the example `.env` file
+
+```bash
+  cp .env.example .env
+```
+
 Start the server
 
 ```bash
