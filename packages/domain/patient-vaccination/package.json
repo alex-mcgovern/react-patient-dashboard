@@ -1,0 +1,22 @@
+{
+	"name": "@domain/patient-vaccination",
+	"type": "module",
+	"sideEffects": [
+		"**/*.css"
+	],
+	"exports": {
+		".": "./src/index.ts"
+	},
+	"private": true,
+	"version": "0.0.0",
+	"dependencies": {
+		"@shared/redux": "*",
+		"react-redux": "9.1.2",
+		"@reduxjs/toolkit": "2.2.5",
+		"@shared/utils": "*",
+		"@shared/date": "*",
+		"@shared/components": "*",
+		"boondoggle": "^2.0.218",
+		"react": "18.2.0"
+	}
+}
