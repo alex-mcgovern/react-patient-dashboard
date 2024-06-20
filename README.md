@@ -14,7 +14,7 @@ It's deployed with Cloudflare pages at [patient-dashboard.alexmcgovern.com](http
 - Built with [Vite](https://vitejs.dev/)
 - Uses [Redux Toolkit](https://redux-toolkit.js.org/) for statement management
 - Uses [RTK Query](https://redux-toolkit.js.org/rtk-query/overview) for data fetching & caching
-- Built with a feature-complete component library, [Boondoggle](https://boondoggle.design/)
+- Built with a feature-complete component library which is a side project of mine, [Boondoggle](https://boondoggle.design/)
 - Monorepo architecture, using NPM workspaces (no deps) for module privacy 
 - Sentry error boundary — drop in a DSN to enable error tracking
 - Strict static analysis config
@@ -29,6 +29,7 @@ It's deployed with Cloudflare pages at [patient-dashboard.alexmcgovern.com](http
 - `npm run check` — Run static analysis checks & unit tests: `eslint`, `prettier`, `tsc`, `vitest` and [`knip`](https://knip.dev/)
 - `npm run fix` — Fix any auto-fixable static analysis issues
 - `npm run cy:run` — Run E2E tests
+
 
 ## Run Locally
 
@@ -102,5 +103,5 @@ Or do a prod build
 
 ## What would I have done if I had more time?
 
-- [ ] Add filtering to the table view
-- [ ] Round out styling — particularly on smaller screens, and add a mobile menu
+- [ ] Add filtering (by specific columns) to the table view
+- [ ] Round out styling — particularly on smaller screens
